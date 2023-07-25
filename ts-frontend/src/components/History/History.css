@@ -1,0 +1,85 @@
+.history_container {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    font-size: 16px;
+}
+
+.history_heading {
+    width: 100%;
+    /* height: 30vh; */
+    /* margin: 20px auto 30px auto; */
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444;
+    text-shadow: 
+        1px 0px 1px #ccc, 0px 1px 1px #eee, 
+        2px 1px 1px #ccc, 1px 2px 1px #eee,
+        3px 2px 1px #ccc, 2px 3px 1px #eee,
+        4px 3px 1px #ccc, 3px 4px 1px #eee,
+        5px 4px 1px #ccc, 4px 5px 1px #eee,
+        6px 5px 1px #ccc, 5px 6px 1px #eee,
+        7px 6px 1px #ccc;
+}
+
+.history_notice {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: rgb(255, 62, 62);
+}
+
+.summary_card {
+    width: 80%;
+    /* height: 10%; */
+
+    /* margin-top: 120px; */
+    margin: 20px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 20px 30px 0px;
+}
+
+.summary_card .blockquote {
+    /* height : auto; */
+    font-size: 1em;
+}
+
+/*
+.blockquote p {
+    height :  4rem;
+    overflow : hidden;
+} */
+
+.custom-blockquote-footer {
+    float : right;
+    color : rgba(57, 55, 55, 0.6);
+    font-size : 1em;
+    cursor : pointer;
+}
+
+.blockquote-footer {
+    float: right;
+}
+
+.delete_button {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.delete_button:hover {
+    color: red;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    .summary_card {
+        width: 70%;
+    }
+}

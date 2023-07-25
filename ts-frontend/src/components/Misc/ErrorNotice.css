@@ -1,0 +1,29 @@
+.error_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.error_box .error_texts {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.error_box .error_close {
+    /* background-color: #444; */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 1.6em;
+    display: flex;
+    align-items: middle;
+    justify-content: center;
+    transition: .2s;
+}
+
+.error_box .error_close:hover {
+    color: red;
+}

@@ -1,0 +1,120 @@
+.api_container {
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.api_table_contents {
+    margin-top: 20px;
+}
+
+.api_table {
+    /* border: 1px solid #444; */
+    border-collapse: collapse;
+    width: 60%;
+    /* box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 50px 0px; */
+    font-size: 1.1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.api_table td, th {
+    /* border-bottom: 1px solid #444; */
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.api_table th:nth-child(1) {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-right: 2px solid #fff;
+}
+
+.api_table th:nth-child(2) {
+    border-right: 2px solid #fff;
+}
+
+.api_table th:nth-child(3) {
+    border-right: 2px solid #fff;
+}
+
+.api_table th:nth-child(4) {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+th {
+    color: #fff;
+    background-color: #444;
+}
+
+.copy_key {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    /* padding: 5px; */
+    /* border-bottom: 1px dotted black; */
+    vertical-align: text-top;
+    margin: 0 20px;
+}
+
+.copy_key .copy_tooltip {
+    visibility: hidden;
+    width: 200px;
+    font-size: 0.9em;
+    font-weight: 300;
+    background-color: #f5f5f5;
+    color: #000;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    /* left: 10%; */
+    margin-left: -90px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.copy_key .copy_tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #b5b5b5 transparent transparent transparent;
+}
+
+.copy_key:hover .copy_tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn_api {
+    background: #444;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 15px;
+    transition: .3s ease;
+}
+
+.btn_api:hover {
+    color: #000;
+    background: #fff;
+    outline: 1px solid #444;
+}
+
+@media screen and (max-width: 1200px) {
+    .api_table {
+        width: 80%;
+    }
+}

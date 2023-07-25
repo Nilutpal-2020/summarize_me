@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset TS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .form-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .input-box {
+            margin-bottom: 30px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #000;
+            border-radius: 2px;
+            font-size: 1em;
+            color: #162938;
+            font-weight: 500;
+            padding: 0 35px 0 5px;
+        }
+
+        .input-box label {
+            font-size: 1.2em;
+            color: #162938;
+            font-weight: 500;
+        }
+
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: #162938;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #fff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Container" class="form-box">
+        <form action="#">
+            <div class="input-box">
+                <label for="pass">New Password:</label>
+                <input type="password" id="pass" placeholder="Enter password" required />
+            </div>
+            <div class="input-box">
+                <label for="passCheck">Confirm Password:</label>
+                <input type="password" id="passCheck" placeholder="Confirm Password" required />
+            </div>
+            <button type="button" class="btn" onclick="sendReq()">Change Password</button>
+        </form>
+    </div>
+    <div id="Done"></div>
+
+    <script>
+        const sendReq = async() => {
+            const password = document.getElementById('pass').value;
+            const passwordCheck = document.getElementById('passCheck').value;
+
+            let url = window.location.href;
+            url = url.split('/reset-password/')
+
+            const newUrl = url[0] + '/users/update/' + url[1];
+
+            let data = {
+                password: password,
+                passwordCheck: passwordCheck
+            };
+
+            await fetch(newUrl, {
+                headers: {
+                    "content-type": "application/json; charset=UTF-8"
+                },
+                method: "POST",
+                body: JSON.stringify(data)
+            }).then(res => {
+                console.log("Response Complete: ", res);
+                let container = document.getElementById('Container');
+                container.style.display = "none";
+                let message = document.getElementById('Done');
+                message.innerHTML = "Password has been changed!";
+            }).catch(err => console.log(err));
+        };
+    </script>
+</body>
+
+</html>
